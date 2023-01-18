@@ -28,7 +28,7 @@ install)
 	tar -xvf $HOME/massa.tar.gz
 	rm -rf $HOME/massa.tar.gz
 
-	read -p "Введите пароль: " MASSA_PASSSWORD
+	read -p "Введите пароль: " MASSA_PASSWORD
 	echo 'export MASSA_PASSWORD='$MASSA_PASSWORD >> $HOME/.bash_profile
 	echo 'function massa_client() { (cd /root/massa/massa-client/ && ./massa-client -p $MASSA_PASSWORD $@); }' >> $HOME/.bash_profile
 	source $HOME/.bash_profile

@@ -57,8 +57,6 @@ EOF
 	systemctl enable massa-node
 	systemctl restart massa-node
 
-	backup
-
 	echo "Установка завершена"
 	echo "Далее следуйте гайду"
 	echo "Просмотр логов: journalctl -u massa-node -f -o cat"

@@ -57,17 +57,11 @@ EOF
 	systemctl enable massa-node
 	systemctl restart massa-node
 
-	massa_client wallet_generate_secret_key
-	
-	MASSA_SECRET_KEY=$(massa_client wallet_info -j | jq -r ".[].keypair.secret_key")
-	MASSA_ADDRESS=$(massa_client wallet_info -j | jq -r ".[].address_info.address")
-	massa_client node_add_staking_secret_keys $MASSA_SECRET_KEY
-	
 	backup
 
 	echo "Установка завершена"
-	echo "Адрес Massa: ${MASSA_ADDRESS}"
 	echo "Далее следуйте гайду"
+	echo "Просмотр логов: journalctl -u massa-node -f -o cat"
 	;;
 
 update)
